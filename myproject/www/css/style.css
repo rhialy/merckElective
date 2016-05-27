@@ -1,0 +1,11 @@
+#col-80 {
+  border: 1px;
+  border-style: solid;
+  border-color: #efefef;
+}
+
+#col-100 {
+  border: 1px;
+  border-bottom: solid;
+  border-color: #efefef;
+}
