@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrlMerck', function($scope) {
       $scope.firma = "Merck";
-      $scope.date = "27. 06. 2016 14:30";
+      $scope.date = '20160723T00:00:00';
       $scope.location = "Merck Innovation Center Darmstadt";
       $scope.greetingtext = "Noch 23 Tage und 22 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
       $scope.people = [
@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrlTelekom', function($scope) {
       $scope.firma = "Telekom";
-      $scope.date = "29. 06. 2016 15:00";
+      $scope.date = '20160715T00:00:00';
       $scope.location = "Telekom Center Darmstadt";
       $scope.greetingtext = "Noch 25 Tage und 21 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
       $scope.people = [
@@ -27,8 +27,32 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DetailCtrlLufthansa', function($scope) {
+
+      var meetingDate;
+
       $scope.firma = "Lufthansa";
-      $scope.date = "06. 07. 2016 11:00";
+      $scope.date = '20160706T00:00:00';
+      $scope.timeToMeeting = function(){
+
+        var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ];
+
+        var date = new Date();
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var month = monthNames[monthIndex];
+        var year = date.getFullYear();
+        /*$scope.date = [
+                      { day: timeToMeeting.day } ,
+                      { month: timeToMeeting.monthNames[monthIndex] } ,
+                      { year: timeToMeeting.year}
+                    ]*/
+        console.log(day, monthNames[monthIndex], year);
+      };
       $scope.location = "The Squaire Frankfurt";
       $scope.greetingtext = "Noch 25 Tage und 21 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
       $scope.people = [
