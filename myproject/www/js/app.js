@@ -80,6 +80,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.main-detail-lufthansa', {
+    url: '/main-detail-telekom',
+    views: {
+      'tab-main': {
+        templateUrl: 'templates/tab-main-detail.html',
+        controller: 'DetailCtrlLufthansa'
+      }
+    }
+  })
+
+  .state('tab.login', {
+    url: '/login',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+
   .state('tab.account', {
     url: '/account',
     views: {
@@ -91,6 +111,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/main');
+  $urlRouterProvider.otherwise('/tab/login');
 
 });
