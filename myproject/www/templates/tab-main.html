@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view view-title="Übersicht">
   <ion-content>
     <!--
     <div class="list card">
@@ -68,7 +68,7 @@
   -->
 <!--This is the basic layout for a card Variante 2-->
 
-  <div class="row" style="margin-bottom: 15px;" ui-sref="tab.main-detail">
+  <div class="row" style="margin-bottom: 15px;" ui-sref="tab.main-detail-merck">
     <div class="col col 80" id="col-80">
       <div class="col col 100" id="col-100">
         <div class="row">
@@ -82,11 +82,17 @@
           27.06.2016
         </a>
       </div>
+      <div class="col col 100">
+        <a class="item item-icon-left assertive" href="#" id="merckCard">
+          <i class="ion-person"></i>
+          Ihre Ansprechperson: Herr Peter
+        </a>
+      </div>
     </div>
   </div>
 
 
-    <div class="row">
+    <div class="row" ui-sref="tab.main-detail-telekom">
       <div class="col col 80" id="col-80">
         <div class="col col 100" id="col-100">
           <div class="row">
@@ -97,7 +103,13 @@
         <div class="col col 100">
           <a class="item item-icon-left assertive" href="#" id="merckCard">
             <i class="ion-calendar"></i>
-            27.06.2016
+            29.06.2016
+          </a>
+        </div>
+        <div class="col col 100">
+          <a class="item item-icon-left assertive" href="#" id="merckCard">
+            <i class="ion-person"></i>
+            Ihre Ansprechperson: Herr Meier
           </a>
         </div>
       </div>
