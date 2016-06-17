@@ -4,6 +4,28 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrl', function($scope) {})
 
+.controller('DetailCtrlMerck', function($scope) {
+      $scope.firma = "Merck";
+      $scope.date = "27. 06. 2016 14:30";
+      $scope.location = "Merck Innovation Center Darmstadt";
+      $scope.greetingtext = "Noch 23 Tage und 22 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
+      $scope.people = [
+                          { name: "Hans Müller" },
+                          { name: "Peter Mustermann" }
+                      ];
+})
+
+.controller('DetailCtrlTelekom', function($scope) {
+      $scope.firma = "Telekom";
+      $scope.date = "29. 06. 2016 15:00";
+      $scope.location = "Telekom Center Darmstadt";
+      $scope.greetingtext = "Noch 25 Tage und 21 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
+      $scope.people = [
+                          { name: "Peter Meier" },
+                          { name: "Rolf Zukovski" }
+                      ];
+})
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

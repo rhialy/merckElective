@@ -1,10 +1,39 @@
-<ion-view>
+<ion-view view-title="{{ firma }} - Meeting">
 <ion-content>
 
   <div class="row">
     <div class="col col 80">
+      <div class="row" style="padding-bottom: 2rem;">
+            <div class="col col-33">
+                  <img src="img/{{ firma }}Logo.png" style="width: 100%; height: 100%;">
+            </div>
+            <div class="col col-67">
+                  <h2>{{ firma }}</h2>
+            </div>
+      </div>
       <div class="row">
-        
+            <h3>Hallo Herr XYZ</h3>
+      </div>
+      <div class="row" style="padding-bottom: 2rem;">
+            {{greetingtext}}
+      </div>
+      <div class="row">
+            <h3>Terminübersicht:</h3>
+      </div>
+      <div class="row">
+            <div class="col col 100">
+              <a class="item item-icon-left assertive">
+                    <i class="ion-calendar"></i>   {{date}}
+              </a>
+              <a class="item item-icon-left assertive">
+                    <i class="ion-location"></i>   {{location}}
+              </a>
+              <a class="item item-icon-left assertive">
+                    <div ng-repeat="person in people">
+                          <i class="ion-person"></i> {{person.name}}
+                    </div>
+              </a>
+            </div>
       </div>
     </div>
   </div>
