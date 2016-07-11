@@ -4,7 +4,15 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrl', function($scope) {
 
-  $scope.meetingDate = moment("20111031", "YYYYMMDD").fromNow(); // 5 years ag
+  $scope.firma = "Lufthansa";
+  $scope.date = '20160706T00:00:00';
+  $scope.meetingDate = moment("20160720", "YYYYMMDD").fromNow();
+  $scope.location = "The Squaire Frankfurt";
+  $scope.greetingtext = "Dear Mr. XYZ, this termin is due ";
+  $scope.people = [
+                      { name: "Air Baloon" },
+                      { name: "Dimitri Iganofskaja" }
+                  ];
 
 })
 
@@ -36,29 +44,9 @@ angular.module('starter.controllers', [])
 
       $scope.firma = "Lufthansa";
       $scope.date = '20160706T00:00:00';
-      $scope.timeToMeeting = function(){
-
-        var monthNames = [
-          "January", "February", "March",
-          "April", "May", "June", "July",
-          "August", "September", "October",
-          "November", "December"
-        ];
-
-        var date = new Date();
-        var day = date.getDate();
-        var monthIndex = date.getMonth();
-        var month = monthNames[monthIndex];
-        var year = date.getFullYear();
-        /*$scope.date = [
-                      { day: timeToMeeting.day } ,
-                      { month: timeToMeeting.monthNames[monthIndex] } ,
-                      { year: timeToMeeting.year}
-                    ]*/
-        console.log(day, monthNames[monthIndex], year);
-      };
+      $scope.meetingDate = moment("20160720", "YYYYMMDD").fromNow();
       $scope.location = "The Squaire Frankfurt";
-      $scope.greetingtext = "Noch 25 Tage und 21 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
+      $scope.greetingtext = "Dear Mr. XYZ, this termin is due ";
       $scope.people = [
                           { name: "Air Baloon" },
                           { name: "Dimitri Iganofskaja" }
