@@ -2,7 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope) {})
 
-.controller('DetailCtrl', function($scope) {})
+.controller('DetailCtrl', function($scope) {
+
+  $scope.meetingDate = moment("20111031", "YYYYMMDD").fromNow(); // 5 years ag
+
+})
 
 .controller('DetailCtrlMerck', function($scope) {
       $scope.firma = "Merck";
