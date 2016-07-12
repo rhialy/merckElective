@@ -1,6 +1,35 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl', function($scope) {})
+.controller('MainCtrl', function($scope, EventService) {
+  $scope.events = [];
+  $scope.input = {};
+
+  function getAllEvents() {
+    EventService.getEvents()
+    .then(function (result) {
+      $scope.events = result.data.data;
+    });
+  }
+
+  $scope.addEvent = function() {
+    EventService.addEvent($scope.input)
+    .then(function(result) {
+      $scope.input = {};
+      // reload all items - suboptimal, but who cares?
+      getAllEvents();
+    });
+  }
+
+  $scope.deleteEvent = function(id) {
+    EventService.deleteEvent(id)
+    .then(function (result) {
+      // reload all items - suboptimal, but who cares?
+      getAllEvents();
+    });
+  }
+
+  getAllEvents();
+})
 
 .controller('DetailCtrl', function($scope) {
 

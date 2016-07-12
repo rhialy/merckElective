@@ -1,4 +1,4 @@
-<ion-view view-title="Übersicht">
+<ion-view view-title="Übersicht" ng-controller="MainCtrl">
   <ion-content>
     <!--
     <div class="list card">
@@ -88,6 +88,9 @@
           Herr Peter
         </a>
       </div>
+    </div>
+    <div ng-repeat="item in events">
+       {{item.name}}
     </div>
   </div>
 
