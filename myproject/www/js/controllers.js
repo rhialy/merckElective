@@ -31,55 +31,24 @@ angular.module('starter.controllers', [])
   getAllEvents();
 })
 
-.controller('DetailCtrl', function($scope) {
+.controller('DetailCtrl', function($scope, $stateParams, EventService) {
 
-  $scope.firma = "Lufthansa";
-  $scope.date = '20160706T00:00:00';
-  $scope.meetingDate = moment("20160720", "YYYYMMDD").fromNow();
-  $scope.location = "The Squaire Frankfurt";
-  $scope.greetingtext = "Dear Mr. XYZ, this termin is due ";
-  $scope.people = [
-                      { name: "Air Baloon" },
-                      { name: "Dimitri Iganofskaja" }
-                  ];
+  $scope.item = [];
+  $scope.ToDate = {};
+  $scope.test = {};
 
-})
+  function getObject() {
+    EventService.getOne('events', String($stateParams.detailID), false)
+    .then(function (result) {
+      $scope.item = result.data;
+      $scope.ToDate = moment(result.data.date, "YYYYMMDD").fromNow();
+      $scope.test = moment(String(result.data.date)).format("MMM Do YY");
+    })
+    console.log($stateParams.detailID);
+  }
+  console.log($scope.item);
+  getObject();
 
-.controller('DetailCtrlMerck', function($scope) {
-      $scope.firma = "Merck";
-      $scope.date = '20160723T00:00:00';
-      $scope.location = "Merck Innovation Center Darmstadt";
-      $scope.greetingtext = "Noch 23 Tage und 22 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
-      $scope.people = [
-                          { name: "Hans Müller" },
-                          { name: "Peter Mustermann" }
-                      ];
-})
-
-.controller('DetailCtrlTelekom', function($scope) {
-      $scope.firma = "Telekom";
-      $scope.date = '20160715T00:00:00';
-      $scope.location = "Telekom Center Darmstadt";
-      $scope.greetingtext = "Noch 25 Tage und 21 Stunden bis zur Verhandlung ihrer Anglage XYZ.";
-      $scope.people = [
-                          { name: "Peter Meier" },
-                          { name: "Rolf Zukovski" }
-                      ];
-})
-
-.controller('DetailCtrlLufthansa', function($scope) {
-
-      var meetingDate;
-
-      $scope.firma = "Lufthansa";
-      $scope.date = '20160706T00:00:00';
-      $scope.meetingDate = moment("20160720", "YYYYMMDD").fromNow();
-      $scope.location = "The Squaire Frankfurt";
-      $scope.greetingtext = "Dear Mr. XYZ, this termin is due ";
-      $scope.people = [
-                          { name: "Air Baloon" },
-                          { name: "Dimitri Iganofskaja" }
-                      ];
 })
 
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {

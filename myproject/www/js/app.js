@@ -52,41 +52,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.main-detail', {
-    url: '/main-detail',
+    url: '/main-detail/:detailID',
     views: {
       'tab-main': {
         templateUrl: 'templates/tab-main-detail.html',
         controller: 'DetailCtrl'
-      }
-    }
-  })
-
-  .state('tab.main-detail-merck', {
-    url: '/main-detail-merck',
-    views: {
-      'tab-main': {
-        templateUrl: 'templates/tab-main-detail.html',
-        controller: 'DetailCtrlMerck'
-      }
-    }
-  })
-
-  .state('tab.main-detail-telekom', {
-    url: '/main-detail-telekom',
-    views: {
-      'tab-main': {
-        templateUrl: 'templates/tab-main-detail.html',
-        controller: 'DetailCtrlTelekom'
-      }
-    }
-  })
-
-  .state('tab.main-detail-lufthansa', {
-    url: '/main-detail-telekom',
-    views: {
-      'tab-main': {
-        templateUrl: 'templates/tab-main-detail.html',
-        controller: 'DetailCtrlLufthansa'
       }
     }
   })
