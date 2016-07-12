@@ -3,11 +3,19 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, EventService) {
   $scope.events = [];
   $scope.input = {};
+  $scope.realDate = [];
 
   function getAllEvents() {
     EventService.getEvents()
     .then(function (result) {
       $scope.events = result.data.data;
+      $scope.realDate = result.data.date;
+      result.data.data.forEach(function(el){
+        el.date = moment(el.date).format("MMM Do YY");
+        console.log(el.date);
+      })
+      console.log(typeof(result.data))
+      console.log(result.data.data)
     });
   }
 
@@ -46,7 +54,7 @@ angular.module('starter.controllers', [])
     })
     console.log($stateParams.detailID);
   }
-  console.log($scope.item);
+  console.log(String($scope.item.persons));
   getObject();
 
 })
