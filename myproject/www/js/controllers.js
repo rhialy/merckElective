@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
       $scope.events = result.data.data;
       $scope.realDate = result.data.date;
       result.data.data.forEach(function(el){
-        el.date = moment(el.date).format("MMM Do YY");
+        el.date = moment(el.date).format("MMM Do YYYY");
         console.log(el.date);
       })
       console.log(typeof(result.data))
@@ -50,11 +50,9 @@ angular.module('starter.controllers', [])
     .then(function (result) {
       $scope.item = result.data;
       $scope.ToDate = moment(result.data.date, "YYYYMMDD").fromNow();
-      $scope.test = moment(String(result.data.date)).format("MMM Do YY");
+      $scope.test = moment(String(result.data.date)).format("MMM Do YYYY");
     })
-    console.log($stateParams.detailID);
   }
-  console.log(String($scope.item.persons));
   getObject();
 
 })

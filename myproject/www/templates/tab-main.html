@@ -71,23 +71,23 @@
   <div class="row" style="margin-bottom: 15px;" ng-repeat="item in events">
   <a href="#/tab/main-detail/{{item.id}}">
     <div class="col col 80" id="col-80">
-      <div class="col col 100" id="col-100">
+      <div class="col col 100">
         <div class="row">
           <img src="img/{{item.company}}.png" style="width: 35%; height: 35%; border-radius: 50%;">
           <p style="margin: auto; font-size: 16pt;"> {{item.company}} - Meeting </p>
         </div>
       </div>
       <div class="col col 100">
-        <a class="item item-icon-left assertive" href="#" id="merckCard">
+        <div class="item item-icon-left assertive" href="#" id="merckCard">
           <i class="ion-calendar" id="inDate"></i>
             {{item.date}}
-        </a>
+      </div>
       </div>
       <div class="col col 100">
-        <a class="item item-icon-left assertive" href="#" id="merckCard">
+        <div class="item item-icon-left assertive" href="#" id="merckCard">
           <i class="ion-person"></i>
           {{item.persons}}
-        </a>
+    </div>
       </div>
     </div>
   </a>

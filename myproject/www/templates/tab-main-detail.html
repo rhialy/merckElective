@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col col 80">
-      <div class="row" style="padding-bottom: 2rem;">
+      <div class="row" style="padding-bottom: 1rem;">
             <div class="col col-33">
                   <img src="img/{{item.company}}.png" style="width: 100%; height: 100%;">
             </div>
@@ -12,26 +12,26 @@
             </div>
       </div>
       <div class="row">
-            <h4>Hallo Herr XYZ</h4>
+            <h4>Hello Ms. Meyer</h4>
       </div>
-      <div class="row" style="padding-bottom: 2rem;">
-        Your termin is due in {{ToDate}}
+      <div class="row" style="padding-bottom: 2rem; word-break: break-word; font-size: 1.125rem; line-height: 1.35rem;">
+        Your appointment is due in {{ToDate}}.<br><br>
+        {{item.description}}
       </div>
       <div class="row">
-            <h3>Terminübersicht:</h3>
+            <h4>Overview:</h4>
       </div>
       <div class="row">
             <div class="col col 100">
               <a class="item item-icon-left assertive">
                     <i class="ion-calendar"></i> {{test}}
               </a>
-              <a class="item item-icon-left assertive">
+              <a class="item item-icon-left assertive" style="text-overflow: clip; white-space: normal;">
                     <i class="ion-location"></i>   {{item.location}}
               </a>
-              <a class="item item-icon-left assertive">
-                    <div ng-repeat="person in people">
-                          <i class="ion-person"></i> {{item.persons}}
-                    </div>
+              <a class="item item-icon-left assertive" style="text-overflow: clip; white-space: normal;">
+            	  <i class="ion-person"></i> {{item.persons}}<br><br>
+            	  <i class="ion-android-bicycle"></i> also likes {{item.common_interest}}
               </a>
             </div>
       </div>
